@@ -46,6 +46,26 @@
     }, 1400);
   })();
 
+  /* ---------- 1.5) 히어로 슬라이드 (오션비치 ↔ 이스트원) ---------- */
+  (function () {
+    var bgs = document.querySelectorAll(".lock__bg");
+    var slides = document.querySelectorAll(".lock__slide");
+    var dots = document.querySelectorAll(".lock__dots i");
+    if (!slides.length || reduce) return;
+
+    var idx = 0;
+    var n = slides.length;
+    window.setInterval(function () {
+      idx = (idx + 1) % n;
+      for (var i = 0; i < n; i++) {
+        var on = i === idx;
+        if (bgs[i]) bgs[i].classList.toggle("is-on", on);
+        slides[i].classList.toggle("is-on", on);
+        if (dots[i]) dots[i].classList.toggle("is-on", on);
+      }
+    }, 5000);
+  })();
+
   /* ---------- 2) 스크롤 리빌 (스태거) ---------- */
   (function () {
     var items = document.querySelectorAll(".reveal");

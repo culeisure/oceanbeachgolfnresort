@@ -70,8 +70,16 @@ ul { list-style: none; }
 }
 .lock__bg {
   position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+}
+.lock__bg.is-on { opacity: 1; }
+.lock__bg--a {
   background: url("img/ob-aerial.jpg") center 40% / cover no-repeat;
   animation: heroZoom 12s ease-out both;
+}
+.lock__bg--b {
+  background: url("img/eastone-hero.jpg") center 30% / cover no-repeat;
 }
 @keyframes heroZoom {
   from { transform: scale(1.08); }
@@ -101,6 +109,32 @@ ul { list-style: none; }
   padding: 0 26px 30px;
   text-align: center;
   text-shadow: 0 1px 3px rgba(10, 14, 26, 0.55), 0 4px 22px rgba(10, 14, 26, 0.45);
+}
+.lock__slides { display: grid; }
+.lock__slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 1s ease, transform 1s ease;
+  pointer-events: none;
+}
+.lock__slide.is-on {
+  opacity: 1;
+  transform: none;
+}
+.lock__dots {
+  margin-top: 22px;
+  display: flex; justify-content: center; gap: 7px;
+}
+.lock__dots i {
+  width: 6px; height: 6px;
+  border-radius: 999px;
+  background: rgba(248, 244, 234, 0.38);
+  transition: width 0.4s ease, background 0.4s ease;
+}
+.lock__dots i.is-on {
+  width: 20px;
+  background: var(--gold-2);
 }
 .lock__eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
@@ -389,6 +423,20 @@ ul { list-style: none; }
 }
 
 /* ---------- 그린피 표 ---------- */
+.block__subtitle {
+  font-family: var(--serif);
+  font-size: 17px; font-weight: 600;
+  margin: 38px 0 14px;
+  padding-top: 14px;
+  position: relative;
+}
+.block__subtitle::before {
+  content: "";
+  position: absolute; top: 0; left: 0;
+  width: 24px; height: 2px;
+  background: var(--gold-2);
+}
+
 .fee {
   width: 100%;
   border-collapse: collapse;

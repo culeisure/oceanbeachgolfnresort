@@ -43,26 +43,50 @@
 
   <div class="shell">
 
-    <!-- ===== 히어로: 오션비치 일출 항공 ===== -->
+    <!-- ===== 히어로: 오션비치 ↔ 이스트원 슬라이드 ===== -->
     <section class="lock" id="lock" aria-label="오션비치 회원 모집 안내">
-      <div class="lock__bg" aria-hidden="true"></div>
+      <div class="lock__bg lock__bg--a is-on" aria-hidden="true"></div>
+      <div class="lock__bg lock__bg--b" aria-hidden="true"></div>
       <div class="lock__veil" aria-hidden="true"></div>
       <div class="lock__top">
         <img class="lock__brand" src="img/logo.webp" alt="Ocean Beach Golf &amp; Resort" />
       </div>
       <div class="lock__body">
-        <span class="lock__eyebrow">
-          <span>콘도회원권 신규 회원 모집</span>
-        </span>
-        <h1 class="lock__title">
-          <span class="lock__line lock__line--sm">동해 바다 그 위에 펼쳐진</span>
-          <span class="lock__line"><em>오션비치 골프앤리조트</em></span>
-        </h1>
-        <p class="lock__sub">
-          씨사이드 27홀 · 전 객실 오션뷰 콘도미니엄<br />
-          동해의 프리미엄을 회원으로 누리세요
-        </p>
-        <p class="lock__note">* KLPGA 2026 드림&amp;챔피언스투어 개최지</p>
+        <div class="lock__slides">
+          <!-- 슬라이드 1: 오션비치 -->
+          <div class="lock__slide is-on" data-slide="0">
+            <span class="lock__eyebrow">
+              <span>콘도회원권 신규 회원 모집</span>
+            </span>
+            <h1 class="lock__title">
+              <span class="lock__line lock__line--sm">동해 바다 그 위에 펼쳐진</span>
+              <span class="lock__line"><em>오션비치 골프앤리조트</em></span>
+            </h1>
+            <p class="lock__sub">
+              씨사이드 27홀 · 전 객실 오션뷰 콘도미니엄<br />
+              동해의 프리미엄을 회원으로 누리세요
+            </p>
+            <p class="lock__note">* KLPGA 2026 드림&amp;챔피언스투어 개최지</p>
+          </div>
+          <!-- 슬라이드 2: 이스트원 -->
+          <div class="lock__slide" data-slide="1">
+            <span class="lock__eyebrow">
+              <span>하나의 회원권으로 두 개의 프리미엄</span>
+            </span>
+            <p class="lock__title" role="presentation">
+              <span class="lock__line lock__line--sm">동쪽의 최고를 꿈꾸며<br />오션비치가 만드는</span>
+              <span class="lock__line"><em>럭셔리 리조트, 이스트원</em></span>
+            </p>
+            <p class="lock__sub">
+              오션비치 골프앤리조트 회원권으로<br />
+              이스트원까지 누리세요
+            </p>
+            <p class="lock__note">* 2030년 상반기 준공 예정 · 개장 시 준회원 대우</p>
+          </div>
+        </div>
+        <div class="lock__dots" aria-hidden="true">
+          <i class="is-on"></i><i></i>
+        </div>
       </div>
       <div class="lock__hint" aria-hidden="true">
         <span class="lock__hint-line"></span>
@@ -161,7 +185,8 @@
       <section class="block reveal" aria-labelledby="eo-title">
         <h2 class="block__title" id="eo-title">이스트원 골프&amp;리조트 <span class="tag-soon">2030 예정</span></h2>
         <p class="block__desc">
-          오션비치가 영덕에 새롭게 조성하는 정규 27홀 골프&amp;리조트.
+          이스트원은 동쪽에서 최고가 되겠다는 <strong>오션비치의 포부</strong>가 담긴
+          정규 27홀 럭셔리 골프&amp;리조트입니다.
           지금 입회하시는 회원님은 이스트원 개장 시 <strong>준회원&nbsp;대우</strong>로
           이용하실 수 있으며, <strong>VIP · 다이아몬드 회원은 정회원&nbsp;대우</strong>로
           교차 사용이 가능합니다.
@@ -223,6 +248,24 @@
             <li><span>이스트원</span><b>개장 시 준회원 대우</b></li>
           </ul>
         </article>
+
+        <!-- 회원 우대 그린피 -->
+        <h3 class="block__subtitle" id="fee-title">회원 우대 그린피</h3>
+        <table class="fee" aria-labelledby="fee-title">
+          <thead>
+            <tr><th>구분</th><th>대상</th><th>주중</th><th>주말</th></tr>
+          </thead>
+          <tbody>
+            <tr><th rowspan="2">밸리</th><td>회원</td><td>8만원</td><td>10만원</td></tr>
+            <tr><td>동반</td><td>9만원</td><td>11만원</td></tr>
+            <tr><th rowspan="2">골드</th><td>기명 · 지정</td><td>7만원</td><td>9만원</td></tr>
+            <tr><td>동반</td><td>8만원</td><td>10만원</td></tr>
+            <tr><th rowspan="3">시그니처</th><td>기명 · 지정</td><td>7만원</td><td>9만원</td></tr>
+            <tr><td>동반</td><td>8만원</td><td>10만원</td></tr>
+            <tr><td>위임</td><td>10만원</td><td>11만원</td></tr>
+          </tbody>
+        </table>
+        <p class="fine">· 골프 3부 이용 시 횟수 차감 없이 회원가가 적용됩니다. (주중·주말 교차 사용 불가)</p>
       </section>
 
       <!-- ===== 프리미엄 라인 ===== -->
@@ -270,26 +313,6 @@
           </li>
         </ul>
         <p class="fine">· 제휴 골프장 이용 시 ㈜오션비치를 통한 사전 예약으로 진행됩니다.</p>
-      </section>
-
-      <!-- ===== 우대 그린피 ===== -->
-      <section class="block reveal" aria-labelledby="fee-title">
-        <h2 class="block__title" id="fee-title">회원 우대 그린피</h2>
-        <table class="fee">
-          <thead>
-            <tr><th>구분</th><th>대상</th><th>주중</th><th>주말</th></tr>
-          </thead>
-          <tbody>
-            <tr><th rowspan="2">밸리</th><td>회원</td><td>8만원</td><td>10만원</td></tr>
-            <tr><td>동반</td><td>9만원</td><td>11만원</td></tr>
-            <tr><th rowspan="2">골드</th><td>기명 · 지정</td><td>7만원</td><td>9만원</td></tr>
-            <tr><td>동반</td><td>8만원</td><td>10만원</td></tr>
-            <tr><th rowspan="3">시그니처</th><td>기명 · 지정</td><td>7만원</td><td>9만원</td></tr>
-            <tr><td>동반</td><td>8만원</td><td>10만원</td></tr>
-            <tr><td>위임</td><td>10만원</td><td>11만원</td></tr>
-          </tbody>
-        </table>
-        <p class="fine">· 골프 3부 이용 시 횟수 차감 없이 회원가가 적용됩니다. (주중·주말 교차 사용 불가)</p>
       </section>
 
       <!-- ===== CTA ===== -->
