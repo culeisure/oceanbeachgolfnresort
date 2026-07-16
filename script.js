@@ -55,15 +55,28 @@
 
     var idx = 0;
     var n = slides.length;
-    window.setInterval(function () {
-      idx = (idx + 1) % n;
+
+    /* 체류 시간: 진입 직후 오션비치 2.6초 → 이스트원 4.2초
+       → 이후 오션비치 8초 / 이스트원 4.2초 반복 */
+    var FIRST_HOLD = 2600;
+    var HOLD = { 0: 8000, 1: 4200 };
+
+    function show(target) {
       for (var i = 0; i < n; i++) {
-        var on = i === idx;
+        var on = i === target;
         if (bgs[i]) bgs[i].classList.toggle("is-on", on);
         slides[i].classList.toggle("is-on", on);
         if (dots[i]) dots[i].classList.toggle("is-on", on);
       }
-    }, 5000);
+    }
+    function next(delay) {
+      window.setTimeout(function () {
+        idx = (idx + 1) % n;
+        show(idx);
+        next(HOLD[idx]);
+      }, delay);
+    }
+    next(FIRST_HOLD);
   })();
 
   /* ---------- 2) 스크롤 리빌 (스태거) ---------- */
