@@ -129,14 +129,11 @@
   })();
 
   /* ---------- 4) 전환 트래킹 ----------
-     전송 대상이 붙기 전까지 dataLayer 큐 + 콘솔.
-     GA4 연결 시 gtag 줄 주석만 해제. */
+     GA4(G-EQ95RD28FD)로 전화/문자 클릭 이벤트 전송. */
   (function () {
     function sendEvent(name, params) {
       try {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: name, params: params });
-        // if (typeof gtag === "function") gtag("event", name, params);
+        if (typeof gtag === "function") gtag("event", name, params);
         if (window.console && console.info) {
           console.info("[track]", name, params);
         }
